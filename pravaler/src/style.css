@@ -1,0 +1,120 @@
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+header{
+  z-index: 999;
+  position: fixed;
+  background: rgba(145, 144, 144, 0.377);
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s ease;
+}
+header img {
+  height: 50px;
+}
+header .navigation{
+  position: relative;
+}
+header .navigation a{
+  color: rgb(0, 0, 0);
+  font-size: 1em;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 30px;
+  text-transform: uppercase;
+}
+header .navigation .btn-clean:hover{
+  color: rgb(255 99 21);
+}
+header .sticky .navigation a:hover{
+  color: #000;
+}
+.btn{
+  color: #000;
+  background: rgb(255 99 21);
+  display: inline-block;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  transition: 0.5s ease;
+  margin-top: 20px;
+  text-decoration: none;
+}
+.btn:hover{
+  background: rgb(255, 131, 73);
+}
+section{
+  padding: 100px 20px;
+}
+.about .content{
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.about .content .col-left{
+  position: relative;
+  width: 45%;
+}
+.about .content .col-right{
+  position: relative;
+  width: 50%;
+}
+.about .content .col-right .img-card{
+  position: relative;
+  width: 100%;
+  min-height: 450px;
+}
+.about .content .col-left .img-card img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.about .content .col-right .content-title{
+  font-size: 2em;
+  font-size: 800;
+  margin-bottom: 20px;
+}
+.about .content .col-right .paragraph-text{
+  font-size: 1em;
+}
+.about h3{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.card{
+  margin-top: 30px;
+}
+.footer{
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 2em;
+}
+.footer .footer-title{
+  font-size: 20px;
+  font-weight: 600;
+}
+.footer p{
+  font-size: 16px;
+  margin-top: 10px;
+}
+.footer a{
+  margin-left: 10px;
+}
