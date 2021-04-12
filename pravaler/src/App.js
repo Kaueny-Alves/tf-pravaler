@@ -1,9 +1,22 @@
-import logo from './logo.svg';
+/* eslint-disable react/jsx-no-undef */
+import { login } from './pages/Login';
+import { simulator } from './pages/simulator';
+/*import logo from './logo.svg';*/
 import './App.css';
 
-function App() {
+/*function*/ export const App = () => {
   return (
-    <div className="App">
+    <BrowserRouter>
+    <Switch>
+      <Route path='/' exact component={login} />
+      <Route path='/simulator' component={simulator} />
+    </Switch>
+  </BrowserRouter>
+
+  )
+};
+  
+   /* <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -20,6 +33,6 @@ function App() {
       </header>
     </div>
   );
-}
+}*/ 
 
 export default App;
