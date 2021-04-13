@@ -1,4 +1,3 @@
-
 function App() {
   return (
     <div className="App">
@@ -38,9 +37,8 @@ function App() {
        <input type='text' className="input-register" placeholder='Cidade' onChange={(e) => routerRegistry ({...signIn, 'cidade' : e.target.value})} />
        <br></br>
       <input type='text' className="input-register" placeholder='Estado' onChange={(e) => routerRegistry ({...signIn, 'estado' : e.target.value})} />
-       <br></br>
-       */}
-                
+     <br></br>*/}
+              
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>

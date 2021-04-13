@@ -10,7 +10,7 @@ function Home () {
   const history = useHistory();
 
   const routerRegistry = () => {
-    history.push('/Registry');
+    history.push('/Student');
   };
 
   const routerSimulator = () => {
