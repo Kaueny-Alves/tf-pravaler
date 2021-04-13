@@ -54,7 +54,7 @@ function App() {
         <div class="menu-btn"></div>
         <div className="navigation">
           <button className="btn-clean" onClick={routerHome}>
-            Voltar
+            Home
           </button>
           <button className="btn" onClick={routerRegistry}>
             Cadastre-se
