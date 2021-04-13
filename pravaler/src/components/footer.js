@@ -1,5 +1,5 @@
 import { FaGithub } from "react-icons/fa";
-const Foorter = () => {
+const Footer = () => {
     return(
         <footer className="footer">
         <span className="footer-title">Hackthon Squad Pravaler</span>
@@ -24,4 +24,4 @@ const Foorter = () => {
       </footer>
     )
 }
-export default Foorter;
+export default Footer;
