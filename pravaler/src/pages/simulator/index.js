@@ -10,7 +10,7 @@ import IntlCurrencyInput from "react-intl-currency-input"
 function App() {
   const history = useHistory();
   const routerRegistry = () => {
-    history.push("/Registry");
+    history.push("/Student");
   };
 
   const routerHome = () => {

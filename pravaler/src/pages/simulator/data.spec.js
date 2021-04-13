@@ -1,4 +1,4 @@
-/*import Simulator from "../Simulator/simulator"
+import Simulator from "../Simulator/simulator"
 
 describe('test function Simulator', () => {
     it('is function', () => {
@@ -11,4 +11,4 @@ describe('test function Simulator', () => {
         const test = Simulator (value1, value2);
         expect(test).toEqual(2500)
     });
-})*/
+})
