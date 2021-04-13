@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header" >
-      <h1>Login</h1>
+      <h1>Seja Bem vindo ao nosso Portal</h1>
       <br></br>
       <input type='text' className="input-register" placeholder='Insira seu e-mail' onChange={(e) => routerLogin({...signIn, 'email' : e.target.value})} />
       <br></br>
@@ -13,7 +13,7 @@ function App() {
       <br></br>
       <div>
          <br></br>
-           <button id='btn-submit' className="form-input-register" type='submit' value='submit'>Cadastrar</button>
+           <button id='btn-submit' className="form-input-register" type='submit' value='submit'>Login</button>
            <div className="texto-cadastro"></div>
           </div>
       </header>
