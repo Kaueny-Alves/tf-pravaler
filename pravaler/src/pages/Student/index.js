@@ -94,7 +94,7 @@ function App() {
             <InputMasck mask="999.999.999-99" placeholder="Ex.: 000.000.000-00"></InputMasck>
 
             <label> E-mail</label>
-            <input type='text' placeholder="Ex.: jaão@eduardo.com"/>
+            <input type='text' placeholder="Ex.: joão@eduardo.com"/>
             <label> E-mail</label>
             <input type='text' placeholder="Ex.: joão@eduardo.com"/>
 
