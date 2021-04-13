@@ -8,6 +8,7 @@ import Simulator from './pages/Simulator/index';
 import Student from './pages/Student/index'
 import Registry from './pages/Registry/index'
 
+
 function Routes() {
     return(
         <BrowserRouter>
