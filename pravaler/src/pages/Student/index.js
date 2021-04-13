@@ -36,7 +36,6 @@ function App() {
   const [district, setDistrict] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
-
   
   const handleRegister = (e
     // name,
@@ -83,7 +82,6 @@ function App() {
   };
   
 
- 
   function handleBlur({target}) {
     const regex = /[A-Z][a-z]* [A-Z][a-z]*/;
     const validation = regex.test((target.value).toUpperCase());
