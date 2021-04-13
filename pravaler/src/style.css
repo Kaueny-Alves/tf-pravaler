@@ -144,7 +144,7 @@ section{
   margin-left: 10px;
 }
 .login{
-  min-height: 568px;
+  min-height: 80vh;
   text-align: center;
 }
 .login h1{
