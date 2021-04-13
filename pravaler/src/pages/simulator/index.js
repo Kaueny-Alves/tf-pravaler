@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import Simulator from "../Simulator/simulator"
+import Simulator from "./simulator"
 import financiamento from "../../images/financiamento.jpg";
 import Footer from '../../components/footer';
 import IntlCurrencyInput from "react-intl-currency-input"
