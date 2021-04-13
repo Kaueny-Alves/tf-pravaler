@@ -2,16 +2,10 @@ import { reqServ } from "../../services/requests";
 
 export const registerFunc = {
    
-    register: () => {
+    register: (path, methodType, bodyContent) => {
         //Paramêtros
-        reqServ.reqBody()
-    },
-    findSchool: () => {
-        reqServ.reqSchoolOpt
-        //Função que filtra
-    },
-    findAddress: () => {
-        //CEP
-        reqServ.reqAddress()
+        reqServ.reqUserBody(path, methodType, bodyContent)
+        .then((result) => console.log(result))
+        .catch((error) => console.log(error))
     }
 };

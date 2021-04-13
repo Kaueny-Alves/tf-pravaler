@@ -1,9 +1,79 @@
+import React, { useState } from "react";
+import { registerFunc } from "./functions";
+import { reqServ } from "../../services/requests";
+
 function App() {
+  const [name, setName] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [phone, setphone] = useState("");
+  const [email, setEmail] = useState("");
+  const [rent, setRend] = useState("");
+  const [lender, setLender] = useState("");
+  const [cpfLender, setCpfLender] = useState("");
+  const [phoneLender, setPhoneLender] = useState("");
+  const [emailLender, setEmailLender] = useState("");
+  const [school, setSchool] = useState("");
+  const [classSchool, setClassSchool] = useState("");
+  const [cep, setCep] = useState("");
+  const [street, setStreet] = useState("");
+  const [numberStreet, setNumberStreet] = useState("");
+  const [district, setDistrict] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+
+  
+
+  const handleRegister = (e
+    // name,
+    // cpf,
+    // phone,
+    // email,
+    // rent,
+    // lender,
+    // cpfLender,
+    // phoneLender,
+    // emailLender,
+    // school,
+    // classSchool,
+    // cep,
+    // street,
+    // numberStreet,
+    // district,
+    // city,
+    // state
+  ) => {
+    e.preventDefault();
+    // const data = {name,
+    //   cpf,
+    //   phone,
+    //   email,
+    //   rent,
+    //   lender,
+    //   cpfLender,
+    //   phoneLender,
+    //   emailLender,
+    //   school,
+    //   classSchool,
+    //   cep,
+    //   street,
+    //   numberStreet,
+    //   district,
+    //   city,
+    //   state};
+    // const path = "register";
+    // const methodType = "POST"
+
+      // registerFunc.register(path, methodType, name)
+      reqServ.reqSchoolOpt()
+  };
+  
+
   return (
     <div className="App">
       <header className="App-header">
-      <h1> </h1>
-     {/*<br></br>
+        <h1> </h1>
+        <button onClick={(e) => handleRegister(e)}>oi </button>
+        {/*<br></br>
       <input type='text' className="input-register" placeholder='Nome do Aluno' onChange={(e) => routerRegistry ({...signIn, 'nameAluno' : e.target.value})} />
      <br></br>
       <input type='text' className="input-register" placeholder='CPF do Aluno' onChange={(e) => routerRegistry ({...signIn, 'cpfAluno' : e.target.value})} />
@@ -38,7 +108,7 @@ function App() {
        <br></br>
       <input type='text' className="input-register" placeholder='Estado' onChange={(e) => routerRegistry ({...signIn, 'estado' : e.target.value})} />
      <br></br>*/}
-              
+
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
