@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { reqServ } from "../../services/requests";
 import InputMasck from "react-input-mask";
 import IntlCurrencyInput from "react-intl-currency-input";
 
@@ -35,6 +36,51 @@ function App() {
   const [district, setDistrict] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
+  
+  const handleRegister = (e
+    // name,
+    // cpf,
+    // phone,
+    // email,
+    // rent,
+    // lender,
+    // cpfLender,
+    // phoneLender,
+    // emailLender,
+    // school,
+    // classSchool,
+    // cep,
+    // street,
+    // numberStreet,
+    // district,
+    // city,
+    // state
+  ) => {
+    e.preventDefault();
+    // const data = {name,
+    //   cpf,
+    //   phone,
+    //   email,
+    //   rent,
+    //   lender,
+    //   cpfLender,
+    //   phoneLender,
+    //   emailLender,
+    //   school,
+    //   classSchool,
+    //   cep,
+    //   street,
+    //   numberStreet,
+    //   district,
+    //   city,
+    //   state};
+    // const path = "register";
+    // const methodType = "POST"
+
+      // registerFunc.register(path, methodType, name)
+      reqServ.reqSchoolOpt()
+  };
+  
 
   function handleBlur({target}) {
     const regex = /[A-Z][a-z]* [A-Z][a-z]*/;
