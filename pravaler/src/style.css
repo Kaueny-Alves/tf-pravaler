@@ -122,6 +122,7 @@ section{
 }
 .simulator .border{
   font-size: 1.5em;
+  border: none;
 }
 .footer{
   bottom: 0;
@@ -146,6 +147,9 @@ section{
   header, .btn{
     padding: 10px 10px;
   }
+  .navigation{
+    margin-left: 50px;
+  }
   .about .content,  .simulator .content{
     flex-direction: column;
   }
@@ -164,12 +168,16 @@ section{
     margin-top: 40px;
   }
   .footer{
-   
    position: relative;
   }
 }
-@media( min-width: 1335px){
+@media( min-height: 1040px){
   .footer{
     position: absolute;
-   }
+  }
+}
+@media(min-width: 1500px){
+  .footer{
+    position: absolute;
+  }
 }

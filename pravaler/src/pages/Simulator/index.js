@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import Simulator from "../Simulator/simulator"
 import financiamento from "../../images/financiamento.jpg";
 import Footer from '../../components/footer';
+import IntlCurrencyInput from "react-intl-currency-input"
 
 function App() {
   const history = useHistory();
-
   const routerRegistry = () => {
     history.push("/Registry");
   };
@@ -14,16 +15,33 @@ function App() {
     history.push("/");
   };
 
-  const [cashStudent, setCashStudent] = useState("");
-  const [moneyLender, setMoneyLender] = useState("");
-  const [result, setResult] = useState("");
+  const currencyConfig = {
+    locale: "pt-BR",
+    formats: {
+      number: {
+        BRL: {
+          style: "currency",
+          currency: "BRL",
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        },
+      },
+    },
+  };
 
-  function Simulator() {
-    const value1 = Number(cashStudent);
-    const value2 = Number(moneyLender);
-    const calculadora = (value1 + value2) / 2.2;
-    setResult(calculadora);
-  }
+  const [result, setResult] = useState("");
+  let value1 = ''
+  let value2 = ''
+
+  const handleStudent = (event, value) => {
+    event.preventDefault();
+    value1 =  value;
+  };
+
+  const handleLender = (event, value) => {
+    event.preventDefault();
+    value2 = value;
+  };
 
   return (
     <>
@@ -48,27 +66,17 @@ function App() {
             <h4>Faça uma simulação de financiamento estudantil</h4>
             <div className="form">
               <label className="num1">Renda do Aluno</label>
-              <input
-                id="nome"
-                value={cashStudent}
-                onChange={(e) => setCashStudent(e.target.value)}
-                name="nome"
-                type="number"
-              />
+                <IntlCurrencyInput currency="BRL" config={currencyConfig}
+                 onChange={handleStudent} />
               <label className="num2">Renda do Garantidor</label>
-              <input
-                id="nome"
-                value={moneyLender}
-                onChange={(e) => setMoneyLender(e.target.value)}
-                name="nome"
-                type="number"
-              />
+              <IntlCurrencyInput currency="BRL" config={currencyConfig}
+                 onChange={handleLender} />
               <button
                 id="somar"
                 className="btn"
                 onClick={(e) => {
                 e.preventDefault();
-                Simulator();
+                setResult(Simulator(value1, value2));
               }}>
                 <b>Gerar Parcela</b>
               </button>
