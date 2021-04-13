@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Simulator from "../Simulator/simulator"
@@ -8,7 +10,7 @@ import IntlCurrencyInput from "react-intl-currency-input"
 function App() {
   const history = useHistory();
   const routerRegistry = () => {
-    history.push("/Registry");
+    history.push("/Student");
   };
 
   const routerHome = () => {

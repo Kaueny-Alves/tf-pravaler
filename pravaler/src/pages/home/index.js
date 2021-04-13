@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/alt-text */
 import "../../style.css";
 import {
   FaCalculator,
@@ -13,7 +15,7 @@ function Home() {
   const history = useHistory();
 
   const routerRegistry = () => {
-    history.push("/Registry");
+    history.push("/Student");
   };
 
   const routerSimulator = () => {
