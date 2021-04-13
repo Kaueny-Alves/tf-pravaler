@@ -1,13 +1,13 @@
 import "../../style.css";
 import {
   FaCalculator,
-  FaGithub,
   FaClipboardCheck,
   FaAlignRight,
   FaFileImport,
 } from "react-icons/fa";
 import students from "../../images/students.jpg";
 import { useHistory } from "react-router-dom";
+import Footer from '../../components/footer';
 
 function Home() {
   const history = useHistory();
@@ -30,13 +30,14 @@ function Home() {
         <a href="https://www.pravaler.com.br/" className="brand">
           <img src="pravaler.png" alt="" />
         </a>
+        <div class="menu-btn"></div>
         <div className="navigation">
-          <a className="btn-clean" onClick={routerLogin}>
+          <button className="btn-clean" onClick={routerLogin}>
             Portal
-          </a>
-          <a className="btn" onClick={routerRegistry}>
+          </button>
+          <button className="btn" onClick={routerRegistry}>
             Cadastre-se
-          </a>
+          </button>
         </div>
       </header>
       <section className="about" id="about">
@@ -61,7 +62,7 @@ function Home() {
             </p>
             <div className="cardBox">
               <div className="card">
-                <FaCalculator size="30" color="#000" />
+                <FaCalculator size="20" color="#000" />
                 <h4>Simule seu financiamento</h4>
                 <span>
                   Encontre a Instituição, curso e depois veja valores na
@@ -69,7 +70,7 @@ function Home() {
                 </span>
               </div>
               <div className="card">
-                <FaAlignRight size="30" color="#000" />
+                <FaAlignRight size="20" color="#000" />
                 <h4>Preencha a proposta</h4>
                 <span>
                   Informe seus dados e do Garantidor durante o preenchimento da
@@ -77,7 +78,7 @@ function Home() {
                 </span>
               </div>
               <div className="card">
-                <FaClipboardCheck size="30" color="#000" />
+                <FaClipboardCheck size="20" color="#000" />
                 <h4>Validação de crédito</h4>
                 <span>
                   Você e o seu Garantidor terão os dados avaliados por empresas
@@ -85,7 +86,7 @@ function Home() {
                 </span>
               </div>
               <div className="card">
-                <FaFileImport size="30" color="#000" />
+                <FaFileImport size="20" color="#000" />
                 <h4>Enviem documentos e assinem o contrato</h4>
                 <span>
                   Você e o seu garantidor vão precisar enviar os documentos que
@@ -96,27 +97,8 @@ function Home() {
           </div>
         </div>
       </section>
-      <footer className="footer">
-        <span className="footer-title">Hackthon Squad Pravaler</span>
-        <p>
-          <a href="https://github.com/JulianaAmoriN" target="_blank">
-            <FaGithub size="30" color="#fff" />
-          </a>
-          <a href="https://github.com/Costahadassa" target="_blank">
-            <FaGithub size="30" color="#fff" />
-          </a>
-          <a href="https://github.com/RobertaKelly" target="_blank">
-            <FaGithub size="30" color="#fff" />
-          </a>
-          <a href="https://github.com/Kaueny-Alves" target="_blank">
-            <FaGithub size="30" color="#fff" />
-          </a>
-          <a href="hhttps://github.com/Talita-8" target="_blank">
-            <FaGithub size="30" color="#fff" />
-          </a>
-        </p>
-        <p>Copyrigth @2021</p>
-      </footer>
+      <Footer/>
+     
     </>
   );
 }
