@@ -5,7 +5,8 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-header{
+
+header {
   z-index: 999;
   position: fixed;
   background: rgba(145, 144, 144, 0.377);
@@ -18,13 +19,16 @@ header{
   align-items: center;
   transition: 0.5s ease;
 }
+
 header img {
   height: 50px;
 }
-header .navigation{
+
+header .navigation {
   position: relative;
 }
-header .navigation .btn-clean{
+
+header .navigation .btn-clean {
   color: rgb(0, 0, 0);
   font-size: 1em;
   font-weight: 500;
@@ -34,13 +38,16 @@ header .navigation .btn-clean{
   background-color: #00ffff00;
   border: none;
 }
-header .navigation .btn-clean:hover{
+
+header .navigation .btn-clean:hover {
   color: rgb(255 99 21);
 }
-header .sticky .navigation a:hover{
+
+header .sticky .navigation a:hover {
   color: #000;
 }
-.btn{
+
+.btn {
   color: #000;
   background: rgb(255 99 21);
   display: inline-block;
@@ -53,33 +60,45 @@ header .sticky .navigation a:hover{
   text-decoration: none;
   border: none;
 }
-.btn:hover{
+
+.btn:hover {
   background: rgb(255, 131, 73);
 }
-section{
+
+section {
   padding: 80px 40px;
 }
-.about .content, .simulator .content{
+
+.about .content,
+.simulator .content {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
-.about .content .col-left, .simulator .content .col-right{
+
+.about .content .col-left,
+.simulator .content .col-right {
   position: relative;
   width: 40%;
 }
-.about .content .col-right, .simulator .content .col-left{
+
+.about .content .col-right,
+.simulator .content .col-left {
   position: relative;
   width: 55%;
 }
-.about .content .col-right .img-card, .simulator .content .col-right .img-card{
+
+.about .content .col-right .img-card,
+.simulator .content .col-right .img-card {
   position: relative;
   width: 100%;
- height: 100%;
+  height: 100%;
 }
-.about .content .col-left .img-card img, .simulator .content .col-right .img-card img{
+
+.about .content .col-left .img-card img,
+.simulator .content .col-right .img-card img {
   position: absolute;
   top: 0;
   left: 0;
@@ -88,43 +107,59 @@ section{
   object-fit: cover;
   border-radius: 10px;
 }
-.about .content .col-right .content-title{
+
+.about .content .col-right .content-title {
   font-size: 1.5em;
   font-size: 800;
   margin-bottom: 20px;
 }
-.about .content .col-right .paragraph-text{
+
+.about .content .col-right .paragraph-text {
   font-size: 1em;
 }
-.about h3{
+
+.about h3 {
   margin-top: 10px;
   margin-bottom: 5px;
 }
-.card{
+
+.card {
   margin-top: 10px;
 }
-.simulator h1{
+
+.simulator h1 {
   font-size: 2.5em;
 }
-.simulator h4, h1, label, input {
+
+.simulator h4,
+h1,
+label,
+input {
   margin-bottom: 10px;
 }
-.simulator input,label{
+
+.simulator input,
+label {
   display: block;
 }
-.simulator input{
+
+.simulator input {
   padding: 5px;
   width: 250px;
 }
-.simulator button, .border{
+
+.simulator button,
+.border {
   font-size: 1.1em;
   margin-bottom: 20px;
 }
-.simulator .border{
+
+.simulator .border {
   font-size: 1.5em;
   border: none;
 }
-.footer{
+
+.footer {
   bottom: 0;
   width: 100%;
   background: #000;
@@ -132,52 +167,91 @@ section{
   text-align: center;
   padding: 2em;
 }
-.footer .footer-title{
+
+.footer .footer-title {
   font-size: 20px;
   font-weight: 600;
 }
-.footer p{
+
+.footer p {
   font-size: 16px;
   margin-top: 10px;
 }
-.footer a{
+
+.footer a {
   margin-left: 10px;
 }
-@media(max-width: 1040px){
-  header, .btn{
+
+.login {
+  min-height: 80vh;
+  text-align: center;
+}
+
+.login h1 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  height: 100%;
+
+}
+
+.input {
+  font-size: 1em;
+  padding: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+@media(max-width: 1040px) {
+
+  header,
+  .btn {
     padding: 10px 10px;
   }
-  .navigation{
+
+  .navigation {
     margin-left: 50px;
   }
-  .about .content,  .simulator .content{
+
+  .about .content,
+  .simulator .content {
     flex-direction: column;
   }
-  .about .content .column, .simulator .content .column{
+
+  .about .content .column,
+  .simulator .content .column {
     position: relative;
     width: 100%;
     height: 100%;
   }
-  .about .content .col-left .img-card img, .simulator .content .col-right .img-card img  {
+
+  .about .content .col-left .img-card img,
+  .simulator .content .col-right .img-card img {
     position: inherit;
   }
-  .about .content .col-left,  .simulator .content .col-right {
+
+  .about .content .col-left,
+  .simulator .content .col-right {
     -webkit-user-modify: read-write-plaintext-only;
   }
-  .about .content .col-right, .simulator .content .col-right {
+
+  .about .content .col-right,
+  .simulator .content .col-right {
     margin-top: 40px;
   }
-  .footer{
-   position: relative;
+
+  .footer {
+    position: relative;
   }
 }
-@media( min-height: 1040px){
-  .footer{
+
+@media(min-height: 1040px) {
+  .footer {
     position: absolute;
   }
 }
-@media(min-width: 1500px){
-  .footer{
+
+@media(min-width: 1500px) {
+  .footer {
     position: absolute;
   }
 }

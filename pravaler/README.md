@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+<img src = "./src/images/pravaler.png" height='150' widht='150'>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Índice :rocket:
 
-## Available Scripts
+- [1. Descrição](#1-descrição)
 
-In the project directory, you can run:
+- [2. Planejamento](#2-planejamento)
 
-### `npm start`
+- [3. Protótipo](#3-Protótipo)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [4.Tecnologias Utilizadas](#4-tecnologias-utilizadas)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [5. Desenvolvedoras](#7-desenvolvedoras)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+###  1. Descrição :pencil:
+Desafio real proposto pela Pravaler. Implementamos o que aprendemos em termos técnicos e socioemocionais ao longo do Bootcamp.
 
-### `npm run build`
+###  2. Planejamento :bulb:
+A equipe utilizou a ferramenta Trello para fazer todo o planejamento e organização do projeto. Abaixo a imagem do quadro que a equipe criou para tal fim. Se quiser saber um pouco mais sobre o planejamento do projeto, basta acessar nosso quadro através desse `<link>` :  trello.com/b/Fb5RufFT/pravaler
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![imagem](./src/images/trello.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3. Protótipo :computer:
+A seguir, está o protótipo inicial do site. Um fluxograma da criação das funcionalidades do site e um fluxo dos processos para criação do projeto.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![imagem](./src/images/home1.png)
+![imagem](./src/images/home2.png)
+![imagem](./src/images/home3.png)
+![imagem](./src/images/home4.png)
 
-### `npm run eject`
+### 4. Tecnologias Utilizadas :computer:
+Para a realização deste projeto 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<img alt="Trello" src="https://img.shields.io/badge/Trello%20-%23026AA7.svg?&style=for-the-badge&logo=Trello&logoColor=white"/>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img alt="React" src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<img alt="NodeJS" src="https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white"/>
 
-## Learn More
+<img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img alt="Material UI" src="https://img.shields.io/badge/material%20ui%20-%230081CB.svg?&style=for-the-badge&logo=material-ui&logoColor=white"/>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+###  5. Desenvolvedoras 	:camera_flash:
+Para conhecer um pouco mais do trabalho de cada uma das desenvolvedoras desse projeto, clique nos seus nomes a seguir:
 
-### Code Splitting
+:woman_student: <a href="https://github.com/Costahadassa">Hadassa Costa </a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+:woman_student: <a href="https://github.com/JulianaAmoriN">Juliana Silveira</a> 
 
-### Analyzing the Bundle Size
+:woman_student: <a href="https://github.com/Kaueny-Alves">Kaueny Alves </a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+:woman_student: <a href="https://github.com/RobertaKelly">Roberta  Kelly</a>
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+:woman_student: <a href="https://github.com/Talita-8">Talita Silva </a>  

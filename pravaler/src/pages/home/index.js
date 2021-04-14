@@ -5,7 +5,7 @@ import {
   FaAlignRight,
   FaFileImport,
 } from "react-icons/fa";
-import students from "../../images/students.jpg";
+import Students from "../../images/students.jpg";
 import { useHistory } from "react-router-dom";
 import Footer from '../../components/footer';
 
@@ -13,7 +13,7 @@ function Home() {
   const history = useHistory();
 
   const routerRegistry = () => {
-    history.push("/Registry");
+    history.push("/Student");
   };
 
   const routerSimulator = () => {
@@ -28,23 +28,22 @@ function Home() {
     <>
       <header>
         <a href="https://www.pravaler.com.br/" className="brand">
-          <img src="pravaler.png" alt="" />
+          <img src="pravaler.png" alt="Logo Pravaler"/>
         </a>
-        <div class="menu-btn"></div>
         <div className="navigation">
-          <button className="btn-clean" onClick={routerLogin}>
+          <button type="button "className="btn-clean" onClick={routerLogin}>
             Portal
           </button>
-          <button className="btn" onClick={routerRegistry}>
+          <button type="button" className="btn" onClick={routerRegistry}>
             Cadastre-se
           </button>
         </div>
       </header>
-      <section className="about" id="about">
+      <section className="about">
         <div className="content">
           <div className="column col-left">
             <div className="img-card">
-              <img src={students} />
+              <img src={Students} alt="Imagem estudante"/>
             </div>
           </div>
           <div className="column col-right">
@@ -52,9 +51,9 @@ function Home() {
               Seu futuro você faz acontecer. Invista na sua educação com o
               Pravaler.
             </h2>
-            <a className="btn" onClick={routerSimulator}>
+            <button className="btn" onClick={routerSimulator}>
               <b>Simule agora</b>
-            </a>
+            </button>
             <h3>Faça tudo 100% online</h3>
             <p className="paragraph-text">
               Em apenas 4 passos você pode garantir o seu financiamento
@@ -66,7 +65,7 @@ function Home() {
                 <h4>Simule seu financiamento</h4>
                 <span>
                   Encontre a Instituição, curso e depois veja valores na
-                  simulação
+                  simulação.
                 </span>
               </div>
               <div className="card">
@@ -97,8 +96,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <Footer />
-
+      <Footer/>
     </>
   );
 }
