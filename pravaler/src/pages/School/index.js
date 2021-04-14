@@ -42,6 +42,7 @@ function School() {
         </div>
       </header>
       <section className="container">
+        <h1>Faculdade: --------</h1>
         <section className="container-student">
           {users.length > 0 ? users.map((user) => {
             const created = new Date(user.createdAt).toLocaleString("pt-br");
