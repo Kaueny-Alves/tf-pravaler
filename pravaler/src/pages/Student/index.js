@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { reqServ } from "../../services/requests";
 import { registerFunc } from "./functions";
+import { reqServ } from "../../services/requests";
 import InputMasck from "react-input-mask";
 import IntlCurrencyInput from "react-intl-currency-input";
 
@@ -39,50 +39,50 @@ function App() {
   const [state, setState] = useState("");
 
   const handleRegister = (
-    e,
-    name,
-    cpf,
-    phone,
-    email,
-    rent,
-    lender,
-    cpfLender,
-    phoneLender,
-    emailLender,
-    school,
-    classSchool,
-    cep,
-    street,
-    numberStreet,
-    district,
-    city,
-    state
+    e
+    // name,
+    // cpf,
+    // phone,
+    // email,
+    // rent,
+    // lender,
+    // cpfLender,
+    // phoneLender,
+    // emailLender,
+    // school,
+    // classSchool,
+    // cep,
+    // street,
+    // numberStreet,
+    // district,
+    // city,
+    // state
   ) => {
     e.preventDefault();
-    const data = {
-      name,
-      cpf,
-      phone,
-      email,
-      rent,
-      lender,
-      cpfLender,
-      phoneLender,
-      emailLender,
-      school,
-      classSchool,
-      cep,
-      street,
-      numberStreet,
-      district,
-      city,
-      state,
-    };
-    const path = "register";
-    const methodType = "POST";
+    // const data = {
+    //   name,
+    //   cpf,
+    //   phone,
+    //   email,
+    //   rent,
+    //   lender,
+    //   cpfLender,
+    //   phoneLender,
+    //   emailLender,
+    //   school,
+    //   classSchool,
+    //   cep,
+    //   street,
+    //   numberStreet,
+    //   district,
+    //   city,
+    //   state,
+    // };
+    // const path = "register";
+    // const methodType = "POST";
 
-    registerFunc.register(path, methodType, name);
-    //reqServ.reqSchoolOpt()
+    // registerFunc.register(path, methodType, data);
+    reqServ.reqSchoolOpt()
   };
 
   function handleBlur({ target }) {
@@ -94,7 +94,7 @@ function App() {
   return (
     <>
       <section>
-        <h1>Cadasdro</h1>
+        <h1>Cadastro</h1>
         <div>
           <div>
             <h4>Curso</h4>
@@ -106,10 +106,9 @@ function App() {
             <h4>Endereço</h4>
             <label> Cep </label>
             <InputMasck
-              onClick={(e) => setCep(e.target.value)}
-              mask="00000-000"
-              placeholder="Ex.: 00000-000"
-            ></InputMasck>
+             mask="00000-000"
+              placeholder="Ex.: 00000-000">
+            </InputMasck>
             <label> Rua </label>
             <label> Número </label>
             <label> Bairro </label>
@@ -122,20 +121,17 @@ function App() {
             <input
               type="text"
               value={name}
-              onChange={(e) => setName(e.target.value)}
               onBlur={handleBlur}
               placeholder="Ex.: Maria Eduarda"
             />
 
             <label className="phone">Celular</label>
             <InputMasck
-              onChange={(e) => setPhone(e.target.value)}
               mask="(99) 99999-9999"
               placeholder="Ex.: (00) 00000-0000"
             ></InputMasck>
             <label className="cpf">CPF</label>
             <InputMasck
-              onChange={(e) => setCpf(e.target.value)}
               mask="999.999.999-99"
               placeholder="Ex.: 000.000.000-00"
             ></InputMasck>
@@ -144,7 +140,6 @@ function App() {
             <input
               type="text"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
               placeholder="Ex.: maria@eduarda.com"
             />
             <label> E-mail</label>
@@ -152,7 +147,6 @@ function App() {
 
             <label> Renda do Aluno</label>
             <IntlCurrencyInput
-              onChange={(e) => setRent(e.target.value)}
               currency="BRL"
               config={currencyConfig}
             />
@@ -163,19 +157,16 @@ function App() {
             <input
               type="text"
               value={lender}
-              onChange={(e) => setLender(e.target.value)}
               placeholder="Ex.: João Eduardo"
             />
 
             <label className="phone">Celular</label>
             <InputMasck
-              onChange={(e) => setPhoneLender(e.target.value)}
               mask="(99)99999-9999"
               placeholder="Ex.: (00) 00000-0000"
             ></InputMasck>
             <label className="cpf">CPF</label>
             <InputMasck
-              onChange={(e) => setCpfLender(e.target.value)}
               mask="999.999.999-99"
               placeholder="Ex.: 000.000.000-00"
             ></InputMasck>
@@ -183,7 +174,6 @@ function App() {
             <label> E-mail</label>
             <input
               value={emailLender}
-              onChange={(e) => setEmailLender(e.target.value)}
               type="text"
               placeholder="Ex.: joão@eduardo.com"
             />
@@ -192,7 +182,6 @@ function App() {
 
             <label> Renda Garandidor</label>
             <IntlCurrencyInput
-              onChange={(e) => setRentLender(e.target.value)}
               currency="BRL"
               config={currencyConfig}
             />
@@ -201,24 +190,24 @@ function App() {
         <button
           onClick={(e) =>
             handleRegister(
-              e,
-              name,
-              cpf,
-              phone,
-              email,
-              rent,
-              lender,
-              cpfLender,
-              phoneLender,
-              emailLender,
-              school,
-              classSchool,
-              cep,
-              street,
-              numberStreet,
-              district,
-              city,
-              state
+              e
+              // name,
+              // cpf,
+              // phone,
+              // email,
+              // rent,
+              // lender,
+              // cpfLender,
+              // phoneLender,
+              // emailLender,
+              // school,
+              // classSchool,
+              // cep,
+              // street,
+              // numberStreet,
+              // district,
+              // city,
+              // state
             )
           }
         >
