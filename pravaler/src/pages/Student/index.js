@@ -3,6 +3,10 @@ import { registerFunc } from "./functions";
 import { reqServ } from "../../services/requests";
 import InputMasck from "react-input-mask";
 import IntlCurrencyInput from "react-intl-currency-input";
+import Input from "./Form/Input"
+import InputCurrecy from "./Form/InputCurrency";
+import Select from "./Form/Select"
+import useForm from "./Hooks/useForm"
 
 function App() {
   const currencyConfig = {
@@ -19,18 +23,26 @@ function App() {
     },
   };
 
-  const [name, setName] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [rent, setRent] = useState("");
-  const [lender, setLender] = useState("");
-  const [cpfLender, setCpfLender] = useState("");
-  const [phoneLender, setPhoneLender] = useState("");
-  const [emailLender, setEmailLender] = useState("");
-  const [rentLender, setRentLender] = useState("");
+  const name = useForm("name");
+  const cpf = useForm("cpf");
+  const phone = useForm("phone");
+  const email = useForm("email");
+  const emailConfirm = useForm("email");
+  const rent = useForm();
+  const lender = useForm("name");
+  const cpfLender = useForm("cpf");
+  const phoneLender = useForm("phone");
+  const emailLender = useForm("email");
+  const emailConfirmLender = useForm("email");
+  const rentLender = useForm();
+
+  const [checkbox, setCheckbox] = useState(true)
+  const [disabled, setDesabled] = useState(true)
+  const [textLender,setTextLender] = useState("")
+
   const [school, setSchool] = useState("");
   const [classSchool, setClassSchool] = useState("");
+
   const [cep, setCep] = useState("");
   const [street, setStreet] = useState("");
   const [numberStreet, setNumberStreet] = useState("");
@@ -38,182 +50,77 @@ function App() {
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
 
-  const handleRegister = (
-    e
-    // name,
-    // cpf,
-    // phone,
-    // email,
-    // rent,
-    // lender,
-    // cpfLender,
-    // phoneLender,
-    // emailLender,
-    // school,
-    // classSchool,
-    // cep,
-    // street,
-    // numberStreet,
-    // district,
-    // city,
-    // state
-  ) => {
-    e.preventDefault();
-    // const data = {
-    //   name,
-    //   cpf,
-    //   phone,
-    //   email,
-    //   rent,
-    //   lender,
-    //   cpfLender,
-    //   phoneLender,
-    //   emailLender,
-    //   school,
-    //   classSchool,
-    //   cep,
-    //   street,
-    //   numberStreet,
-    //   district,
-    //   city,
-    //   state,
-    // };
-    // const path = "register";
-    // const methodType = "POST";
+  function validateLender (){
+    if(lender.validate() && cpfLender.validate() && phoneLender.validate() && emailLender.validate() && emailConfirmLender.validate && phoneLender.value !== phone.value &&  emailLender.value !== email.value && cpfLender.value !== cpf.value && emailLender.value === emailConfirmLender.value && (rentLender.value).length !== 0 && (rentLender.value !== "$0.0")){
+      console.log(rentLender.value)
+      console.log("função enviar lender")
+    }else{
+      console.log("função Insira os dados Lender")
+    }
+  }
+  
+  function handleSubit (event) {
 
-    // registerFunc.register(path, methodType, data);
-    reqServ.reqSchoolOpt()
-  };
-
-  function handleBlur({ target }) {
-    const regex = /[A-Z][a-z]* [A-Z][a-z]*/;
-    const validation = regex.test(target.value.toUpperCase());
-    console.log(validation);
+    event.preventDefault();
+    if(name.validate() && cpf.validate() && phone.validate() && email.validate() && emailConfirm.validate && email.value === emailConfirm.value) {
+      if ( (rent.value).length === 0 || rent.value === "$0.0" || rent.value === "$0.000"){
+        setDesabled(false)
+        validateLender()
+        setTextLender("Obrigatório ter Garantidor")
+      } else {
+        setTextLender("")
+        if(checkbox === false){
+          validateLender()
+        }else{
+          console.log("Enviar Banco")
+        }
+        console.log("Não obrigatório dados Lender")
+        
+      }
+    }else{
+      console.log("Preencha os campos")
+    }
   }
 
   return (
     <>
-      <section>
-        <h1>Cadastro</h1>
-        <div>
-          <div>
-            <h4>Curso</h4>
-            <label> Faculdade </label>
+      <form onSubmit={handleSubit}>
+        <h1>Aluno</h1>
 
-            <label> Curso </label>
-          </div>
-          <div>
-            <h4>Endereço</h4>
-            <label> Cep </label>
-            <InputMasck
-             mask="00000-000"
-              placeholder="Ex.: 00000-000">
-            </InputMasck>
-            <label> Rua </label>
-            <label> Número </label>
-            <label> Bairro </label>
-            <label> Cidade </label>
-            <label> Estado </label>
-          </div>
-          <div>
-            <h4>Aluno</h4>
-            <label>Nome completo</label>
-            <input
-              type="text"
-              value={name}
-              onBlur={handleBlur}
-              placeholder="Ex.: Maria Eduarda"
-            />
+        <Input id="name" label="Nome Completo" required {...name} />
+        <Input id="email" label="E-mail" required {...email}/>
+        <Input id="emailConfirm" label="Confirmação de E-mail" required {...emailConfirm}/>
+        <Input placeholder="000.000.000-00" mask="999.999.999-99" id="cpf" label="CPF" {...cpf} required/>
+        <Input placeholder="(00) 00000-0000" mask="(99)99999-9999" id="phone" label="Celular" required {...phone}/>
+        <InputCurrecy id="rent"  label="Renda" config={currencyConfig} {...rent}/>
 
-            <label className="phone">Celular</label>
-            <InputMasck
-              mask="(99) 99999-9999"
-              placeholder="Ex.: (00) 00000-0000"
-            ></InputMasck>
-            <label className="cpf">CPF</label>
-            <InputMasck
-              mask="999.999.999-99"
-              placeholder="Ex.: 000.000.000-00"
-            ></InputMasck>
+        <label> Remover Garantidor : <input type="checkbox" value="ledercheck" checked={checkbox} onClick={({target}) => {(setCheckbox(target.checked)); (setDesabled(target.checked))} } /> </label>
+        <p>{textLender}</p>
 
-            <label> E-mail</label>
-            <input
-              type="text"
-              value={email}
-              placeholder="Ex.: maria@eduarda.com"
-            />
-            <label> E-mail</label>
-            <input type="text" placeholder="Ex.: maria@eduarda.com" />
+        <h1>Garantidor</h1>
+        <Input id="lender" label="Nome Completo"  {...lender} disabled={disabled}/>
+        <Input id="emailLender" label="E-mail"  {...emailLender} disabled={disabled}/>
+        <Input id="emailConfirmLender" label="Confirmação de E-mail" {...emailConfirmLender} disabled={disabled}/>
+        <Input placeholder="000.000.000-00" mask="999.999.999-99" id="cpfLender" label="CPF" {...cpfLender} disabled={disabled} />
+        <Input placeholder="(00) 00000-0000" mask="(99)99999-9999" id="phoneLender" label="Celular" {...phoneLender} disabled={disabled}/>
+        <InputCurrecy  id="rentLender" label="Renda" config={currencyConfig} {...rentLender} disabled={disabled}/>
 
-            <label> Renda do Aluno</label>
-            <IntlCurrencyInput
-              currency="BRL"
-              config={currencyConfig}
-            />
-          </div>
-          <div>
-            <h4>Garantidor</h4>
-            <label>Nome completo</label>
-            <input
-              type="text"
-              value={lender}
-              placeholder="Ex.: João Eduardo"
-            />
-
-            <label className="phone">Celular</label>
-            <InputMasck
-              mask="(99)99999-9999"
-              placeholder="Ex.: (00) 00000-0000"
-            ></InputMasck>
-            <label className="cpf">CPF</label>
-            <InputMasck
-              mask="999.999.999-99"
-              placeholder="Ex.: 000.000.000-00"
-            ></InputMasck>
-
-            <label> E-mail</label>
-            <input
-              value={emailLender}
-              type="text"
-              placeholder="Ex.: joão@eduardo.com"
-            />
-            <label> E-mail</label>
-            <input type="text" placeholder="Ex.: joão@eduardo.com" />
-
-            <label> Renda Garandidor</label>
-            <IntlCurrencyInput
-              currency="BRL"
-              config={currencyConfig}
-            />
-          </div>
-        </div>
-        <button
-          onClick={(e) =>
-            handleRegister(
-              e
-              // name,
-              // cpf,
-              // phone,
-              // email,
-              // rent,
-              // lender,
-              // cpfLender,
-              // phoneLender,
-              // emailLender,
-              // school,
-              // classSchool,
-              // cep,
-              // street,
-              // numberStreet,
-              // district,
-              // city,
-              // state
-            )
-          }
-        >
-          OK
-        </button>
-      </section>
+        {/* <Select options={[]}
+        value={school}
+        setValue={setSchool}/>
+        <Select options={[]}
+        value={classSchool}
+        setValue={setClassSchool}/> */}        
+        
+        {/*
+        <Input placeholder="Ex.: 00000-000" id="cep" label="CEP" value={cep} setValue={setCep} required/>
+        <Input id="state" label="Estado" value={state} setValue={setState} required/>
+        <Input id="city" label="Cidade" value={city} setValue={setCity} required/>
+        <Input id="district" label="Bairro" value={district} setValue={setDistrict} required/>
+        <Input id="street" label="Rua" value={street} setValue={setStreet} required/>
+        <Input id="numberStreet" label="Complemento" value={numberStreet} setValue={setNumberStreet} required/> */}
+        <button>Enviar</button>
+      </form>
     </>
   );
 }
