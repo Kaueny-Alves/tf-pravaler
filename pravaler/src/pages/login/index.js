@@ -5,12 +5,16 @@ import Footer from '../../components/footer';
 import axios from "axios";
 
 function Login() {
-
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const history = useHistory();
+
   const routerHome = () => {
     history.push("/");
+  };
+
+  const routerSchool = () => {
+    history.push("/School");
   };
 
   async function signIn(email, password) {
@@ -19,7 +23,8 @@ function Login() {
       password
     }
     const response = await axios.post("https://pravaler-api.herokuapp.com/login", body);
-    console.log(response)
+    localStorage.setItem('token', response.data.token)
+    routerSchool();
   }
 
   const handleEmail = (e) => {
