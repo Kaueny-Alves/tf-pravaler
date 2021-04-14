@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from "./pages/home/index";
-import Login from "./pages/login/index";
+import Home from "./pages/Home/index";
+import Login from "./pages/Login/index";
 import School from "./pages/School/index";
-import Simulator from "./pages/simulator/index";
+import Simulator from "./pages/Simulator/index";
 import Student from "./pages/Student/index";
 
 function Routes() {
