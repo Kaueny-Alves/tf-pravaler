@@ -17,34 +17,20 @@ export const reqServ = {
       redirect: "follow",
     };
     fetch(`https://pravaler-api.herokuapp.com/${path}`, requestOptions)
-      .then((response) => response.text())
+      .then((response) => response.json())
       .then((result) => console.log(result))
       .catch((error) => console.log("Error", error));
   },
 
-  reqSchoolAuth: (path, methodType, headerContent) => {
-    const requestOptions = {
-      method: `${methodType}`,
-      headers: {
-        Authorization: `${headerContent}`,
-      },
-      redirect: "follow",
-    };
-    fetch(`https://pravaler-api.herokuapp.com/${path}`, requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.log("Error", error));
-  },
-
-  reqSchoolOpt: () => {
+  reqSchoolOpt: (setSchool) => {
     const requestOptions = {
       method: "GET",
       redirect: "follow",
     };
 
-    fetch("https://run.mocky.io/v3/0b6c8846-5adb-4ac0-b9bc-6f7ce0a2a149", requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
+    fetch("https://talent-fest-api.herokuapp.com/schools", requestOptions)
+      .then((response) => response.json())
+      .then((result) => setSchool(result))
       .catch((error) => console.log("DEu beem ruim", error));
   },
 

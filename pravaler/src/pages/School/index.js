@@ -22,7 +22,6 @@ function School() {
       return reqServ.reqAllUser(setUsers)
     };
     getUser()
-
   }, [])
 
   return (
