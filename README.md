@@ -23,7 +23,7 @@ A equipe utilizou a ferramenta Trello para fazer todo o planejamento e organiz
 ### 3. Protótipo :computer:
 A seguir, está o protótipo inicial do site. Um fluxograma da criação das funcionalidades do site e um fluxo dos processos para criação do projeto.
 
-![imagem](https://raw.githubusercontent.com/Kaueny-Alves/tf-pravaler/b2e4190e15471cfbdbca9e300fe30904262af5d4/home1.png)
+![imagem](https://)
 ![imagem](./src/images/home2.png)
 ![imagem](./src/images/home3.png)
 ![imagem](./src/images/home4.png)
