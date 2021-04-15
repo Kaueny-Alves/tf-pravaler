@@ -1,10 +1,9 @@
-
-
+import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 function Mackenzi() {
-
+    const history = useHistory();
     const [users, setUsers] = useState([])
 
     useEffect(() => {
@@ -21,6 +20,7 @@ function Mackenzi() {
             const body = { status: "approved" };
             const user = await axios.put(`https://pravaler-api.herokuapp.com/register/${id}`, body);
             console.log(user);
+            history.push("/Email");
         } catch (error) {
             console.log(error.message)
         }
@@ -45,7 +45,7 @@ function Mackenzi() {
 
                     {users.length > 0
                         ? users
-                            .filter(({ instituicao }) => instituicao === "mackenzi")
+                            .filter(({ instituicao }) => instituicao === "mackenzie")
                             .filter(({ status }) => status === "pending")
                             .map((user) => {
                                 const created = new Date(user.createdAt).toLocaleString("pt-br");

@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Email from "./pages/School/email";
 import Home from "./pages/Home/index";
 import Login from "./pages/Login/index";
 import School from "./pages/School/index";
@@ -15,6 +16,7 @@ function Routes() {
         <Route path="/School" component={School} />
         <Route path="/Simulator" component={Simulator} />
         <Route path="/Student" component={Student} />
+        <Route path="/Email" component={Email} />
       </Switch>
     </BrowserRouter>
   );
