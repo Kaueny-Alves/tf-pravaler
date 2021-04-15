@@ -23,10 +23,14 @@ A equipe utilizou a ferramenta Trello para fazer todo o planejamento e organiz
 ### 3. Protótipo :computer:
 A seguir, está o protótipo inicial do site. Um fluxograma da criação das funcionalidades do site e um fluxo dos processos para criação do projeto.
 
-<img src = "./src/images/home1.png" height='300' widht='300'>
-<img src = "./src/images/home2.png" height='150' widht='150'>
-<img src = "./src/images/home3.png" height='150' widht='150'>
-<img src = "./src/images/home4.png" height='150' widht='150'>
+<p align="center"><img src = "./src/images/home1.png" height='450' widht='450'</p>
+  
+<p align="center"><img src = "./src/images/home2.png" height='300' widht='300'></p>
+
+<p align="center"><img src = "./src/images/home3.png" height='300' widht='300'></p>
+  
+<p align="center"><img src = "./src/images/home4.png" height='300' widht='300'></p>
+
 
 ### 4. Tecnologias Utilizadas :computer:
 Para a realização deste projeto 
