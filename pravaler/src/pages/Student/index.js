@@ -104,13 +104,15 @@ function App() {
 
   useEffect(() => {
     getSchool()
+    
   }, [])
   
+  const [listMap, setListMap] = useState()
 
   function renderCoursers(courses) {
     switch (courses) {
       case "anhembi morumbi":
-        return courses.filter((item) => item.name === "anhembi morumbi")
+        return 
       case "cruzeiro do sul":
         return console.log("cruzeiro")
       case "fmu - faculdades metropolitanas unidas":
@@ -118,7 +120,7 @@ function App() {
       case "mackenzie":
         return console.log("mackenzie")
      default: 
-        return "";
+        return "";   
     }
   }
    
@@ -163,6 +165,21 @@ function App() {
         <Input placeholder="(00) 00000-0000" mask="(99)99999-9999" id="phone" label="Celular" required {...phone}/>
         <InputCurrecy id="rent"  label="Renda" config={currencyConfig} {...rent}/>
 
+        <label> Faculdade <Select 
+        options={school}
+        value={courses}
+        setValue={setCourses}
+        />{console.log(courses)}
+        
+        {courses != "" && 
+        <>
+        {/* <Select 
+        options={}
+        value={}
+        setValue={}
+        /> */}
+        </>}</label>
+
         <Input placeholder="Ex.: 00000-000"  mask="99999-999" id="cep" label="CEP" {...cep} required/>
         <button onClick={()=> {getCep()}}>Pesquisar cep</button>
         {console.log(saveCep)}
@@ -171,7 +188,7 @@ function App() {
         <Input id="city" label="Cidade" {...city} required/>
         <Input id="district" label="Bairro"  {...district} required/>
         <Input id="street" label="Rua"  {...street}  required/>
-        <Input id="numberStreet" label="Complemento"  {...numberStreet}/>
+        <Input id="numberStreet" label="Número e complemento : "  {...numberStreet} require/>
         </>  }
         {saveCep && <>
         <p>{saveCep.state}</p>
@@ -193,21 +210,7 @@ function App() {
         <Input placeholder="(00) 00000-0000" mask="(99)99999-9999" id="phoneLender" label="Celular" {...phoneLender} />
         <InputCurrecy  id="rentLender" label="Renda" config={currencyConfig} {...rentLender} /></>}
 
-        <Select 
-        options={school}
-        value={courses}
-        setValue={setCourses}
-        />
         
-        {/* {courses != "" && 
-        <>
-          <Select 
-        options={school}
-        value={courses}
-        setValue={setCourses}
-        />{console.log(courses)}
-        </>} */}
-
         <button onClick={(e) => HandleClickRe(e,
           name.value, 
           cpf.value, 
@@ -220,33 +223,6 @@ function App() {
           emailLender.value, 
           rentLender.value)
           }>Enviar</button>
-        <p>{fields}</p>
-
-        {/* <Select options={school}
-        value={school}
-        setValue={setSchool}/> */}
-        {/* <Select options={[]}
-        value={classSchool}
-        setValue={setClassSchool}/>         */}
-        
-        <Input placeholder="Ex.: 00000-000"  mask="99999-999" id="cep" label="CEP" {...cep} required/>
-        <button onClick={()=> {getCep()}}>Pesquisar cep</button>
-        {console.log(saveCep)}
-        { !saveCep && <>
-        <Input id="state" label="Estado" {...state} required/>
-        <Input id="city" label="Cidade" {...city} required/>
-        <Input id="district" label="Bairro"  {...district} required/>
-        <Input id="street" label="Rua"  {...street}  required/>
-        <Input id="numberStreet" label="Complemento"  {...numberStreet}/>
-        </>  }
-        {saveCep && <>
-        <p>{saveCep.state}</p>
-        <p>{saveCep.city}</p>
-        <p>{saveCep.district}</p>
-        <p>{saveCep.street}</p>
-        <Input id="numberStreet" label="Complemento"  {...numberStreet}/>
-        </>}
-        <button>Enviar</button>
         <p>{fields}</p>
       </form>
     </>
