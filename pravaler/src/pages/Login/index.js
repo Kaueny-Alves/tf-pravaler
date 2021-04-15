@@ -5,12 +5,16 @@ import Footer from '../../components/footer';
 import axios from "axios";
 
 function Login() {
-
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const history = useHistory();
+
   const routerHome = () => {
     history.push("/");
+  };
+
+  const routerSchool = () => {
+    history.push("/School");
   };
 
   async function signIn(email, password) {
@@ -19,7 +23,9 @@ function Login() {
       password
     }
     const response = await axios.post("https://pravaler-api.herokuapp.com/login", body);
-    console.log(response)
+    localStorage.setItem('token', response.data.token)
+    localStorage.setItem('email', response.data.email)
+    routerSchool();
   }
 
   const handleEmail = (e) => {
@@ -44,7 +50,7 @@ function Login() {
       <section className="login">
         <h1>Seja bem-vindo ao nosso portal !</h1>
         <label >E-mail:
-          <input type="text" className="input" placeholder="faculdade@gmailcom" value={email}
+          <input type="text" className="input" placeholder="faculdade@gmail.com" value={email}
             onChange={handleEmail} />
         </label>
         <label >Senha:
@@ -52,7 +58,7 @@ function Login() {
             onChange={handlePassword} />
         </label>
         <div>
-          <button className="btn" type="button" value='submit' onClick={signIn(email, password)}><b>Login</b></button>
+          <button className="btn" type="button" value='submit' onClick={() => { signIn(email, password) }}><b>Login</b></button>
         </div>
       </section>
       <Footer />

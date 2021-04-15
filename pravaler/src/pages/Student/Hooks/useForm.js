@@ -2,7 +2,7 @@ import React from 'react';
 
 const types ={
     name: {
-        regex: /[A-Z][a-z]* [A-Z][a-z]*/,
+        regex: /[a-z]* [a-z]*/,
         message: 'Escreva corretamente.'
     },
     email: {
@@ -17,6 +17,10 @@ const types ={
         regex: /([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/,
         message: 'CPF inválido'
     },
+    cep:{
+        regex: /^\d{5}-\d{3}$/,
+        message: 'CEP invalido'
+    }
 }
 
 const useForm = (type) => {

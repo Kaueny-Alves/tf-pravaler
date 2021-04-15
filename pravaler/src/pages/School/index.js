@@ -1,28 +1,39 @@
 import Footer from "../../components/footer";
 import { useHistory } from "react-router-dom";
+import Fmu from "./fmu";
+import Cruzeiro from "./cruzeiro";
+import Anhembi from "./anhembi";
+import Mackenzi from "./mackenzie";
 import { useEffect, useState } from "react";
-import { reqServ } from "../../services/requests"
-
 
 function School() {
 
   const history = useHistory();
+  const [email, setEmail] = useState()
 
-  const [users, setUsers] = useState([])
-
-  const handleClick = (e) => {
-    e.preventDeafault()
-  }
+  useEffect(() => {
+    setEmail(localStorage.getItem('email'))
+  }, [])
+  console.log(email)
   const routerLogout = () => {
+    localStorage.removeItem("token");
     history.push("/");
   };
 
-  useEffect(() => {
-    const getUser = async () => {
-      return reqServ.reqAllUser(setUsers)
-    };
-    getUser()
-  }, [])
+  function renderSchools(email) {
+    switch (email) {
+      case "fmu@pravaler.com":
+        return <Fmu />
+      case "mackenzie@pravaler.com":
+        return <Mackenzi />
+      case "cruzeiro@pravaler.com":
+        return <Cruzeiro />
+      case "anhembi@pravaler.com":
+        return <Anhembi />
+      default:
+        return "breakfast";
+    }
+  }
 
   return (
     <>
@@ -35,34 +46,10 @@ function School() {
           <button type="button " className="btn-clean" onClick={routerLogout}>
             Logout
           </button>
-          <button className="btn" onClick={handleClick}>
-            Home
-          </button>
         </div>
       </header>
-      <section className="container">
-        <h1>Faculdade: --------</h1>
-        <section className="container-student">
-          {users.length > 0 ? users.map((user) => {
-            const created = new Date(user.createdAt).toLocaleString("pt-br");
-            return (
-              <div className="card-student" key={user.id}>
-                <p><strong>Id:</strong>{user.id}</p>
-                <p><strong>Data da solicitação: </strong>{created}</p>
-                <p><strong>Nome:</strong> {user.nomeAluno}</p>
-                <p><strong>CPF:</strong> {user.cpfAluno}</p>
-                <p><strong>Curso:</strong> {user.curso}</p>
-                <p><strong>Garantidor:</strong> {user.nomeGarantidor}</p>
-                <div className="status">
-                  <button className="btn-approved">aprovado</button>
-                  <button className="btn-disapproved">reprovado</button>
-                </div>
-              </div>
-            )
-          })
-            : <div>Carregando...</div>}
-        </section>
-      </section>
+
+      {renderSchools(email)}
       <Footer />
     </>
   );
