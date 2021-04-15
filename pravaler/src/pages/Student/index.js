@@ -5,6 +5,7 @@ import InputCurrecy from "./Form/InputCurrency";
 import Select from "./Form/Select";
 import useForm from "./Hooks/useForm";
 
+
 function App() {
   const currencyConfig = {
     locale: "pt-BR",
@@ -50,6 +51,7 @@ function App() {
   const [courses, setCourses] = useState("")
   const [coursesOpt, setCoursesOpt] = useState("")
 
+
   function validateLender (){
     setCheckbox(true)
     if(lender.validate() && cpfLender.validate() && phoneLender.validate() && emailLender.validate() && emailConfirmLender.validate && phoneLender.value !== phone.value &&  emailLender.value !== email.value && cpfLender.value !== cpf.value && emailLender.value === emailConfirmLender.value && (rentLender.value).length !== 0 && (rentLender.value !== "$0.0")){
@@ -85,8 +87,8 @@ function App() {
     setFields("")
   }
 
-  const [saveCep, setSaveCep] = useState()
 
+  const [saveCep, setSaveCep] = useState()
   async function getCep() {
     setSaveCep()
     const cepSend= cep.value
@@ -220,6 +222,32 @@ function App() {
           }>Enviar</button>
         <p>{fields}</p>
 
+        {/* <Select options={school}
+        value={school}
+        setValue={setSchool}/> */}
+        {/* <Select options={[]}
+        value={classSchool}
+        setValue={setClassSchool}/>         */}
+        
+        <Input placeholder="Ex.: 00000-000"  mask="99999-999" id="cep" label="CEP" {...cep} required/>
+        <button onClick={()=> {getCep()}}>Pesquisar cep</button>
+        {console.log(saveCep)}
+        { !saveCep && <>
+        <Input id="state" label="Estado" {...state} required/>
+        <Input id="city" label="Cidade" {...city} required/>
+        <Input id="district" label="Bairro"  {...district} required/>
+        <Input id="street" label="Rua"  {...street}  required/>
+        <Input id="numberStreet" label="Complemento"  {...numberStreet}/>
+        </>  }
+        {saveCep && <>
+        <p>{saveCep.state}</p>
+        <p>{saveCep.city}</p>
+        <p>{saveCep.district}</p>
+        <p>{saveCep.street}</p>
+        <Input id="numberStreet" label="Complemento"  {...numberStreet}/>
+        </>}
+        <button>Enviar</button>
+        <p>{fields}</p>
       </form>
     </>
   );
