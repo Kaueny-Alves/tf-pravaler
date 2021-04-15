@@ -6,6 +6,7 @@ const Input = ({id, label, onChange, value, type, onBlur, placeholder, error, ma
         <>
             <label htmlFor={id}>{label}</label>
             <ReactInputMask id={id}
+            className="input"
             disabled={disabled}
             name={id}
             onChange={onChange}
@@ -14,7 +15,7 @@ const Input = ({id, label, onChange, value, type, onBlur, placeholder, error, ma
             type={type}
             value={value}
             mask={mask}/>
-            {error && <p>{error}</p>}
+            {error && <p className="error" >{error}</p>}
         </>
     )
 }

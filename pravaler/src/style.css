@@ -226,7 +226,14 @@ section{
   padding: 100px;
 }
 
+.cep{
+  margin-bottom: 15px;
+}
 
+.error{
+  color: red;
+  font-size: 0.7em;
+}
 
 @media(max-width: 1040px){
   header, .btn{

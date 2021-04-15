@@ -2,7 +2,7 @@ import React from 'react';
 
 const types ={
     name: {
-        regex: /[a-z]* [a-z]*/,
+        regex: /[a-z][a-z]* [a-z][a-z]*/,
         message: 'Escreva corretamente.'
     },
     email: {
