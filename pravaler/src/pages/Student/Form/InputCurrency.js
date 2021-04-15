@@ -7,6 +7,7 @@ const InputCurrecy = ({id, label, onChange, value, type, onBlur, placeholder, er
         <>
             <label htmlFor={id}>{label}</label>
             <IntlCurrencyInput id={id}
+            className="input"
             disabled={disabled}
             currency={currency} 
             config={currencyConfig}
@@ -17,7 +18,7 @@ const InputCurrecy = ({id, label, onChange, value, type, onBlur, placeholder, er
             type={type}
             value={value}
             mask={mask}/>
-            {error && <p>{error}</p>}
+            {error && <p className="error">{error}</p>}
         </>
     )
 }
