@@ -16,17 +16,17 @@
 Desafio real proposto pela Pravaler. Implementamos o que aprendemos em termos técnicos e socioemocionais ao longo do Bootcamp.
 
 ###  2. Planejamento :bulb:
-A equipe utilizou a ferramenta Trello para fazer todo o planejamento e organização do projeto. Abaixo a imagem do quadro que a equipe criou para tal fim. Se quiser saber um pouco mais sobre o planejamento do projeto, basta acessar nosso quadro através desse `<link>` : [Trello](https://trello.com/b/Fb5RufFT/pravaler)
+A equipe utilizou a ferramenta Trello para fazer todo o planejamento e organização do projeto. Abaixo a imagem do quadro que a equipe criou para tal fim. Se quiser saber um pouco mais sobre o planejamento do projeto, basta acessar nosso quadro através desse `<link>` [Trello](https://trello.com/b/Fb5RufFT/pravaler)
 
-![imagem](./src/images/trello.png)
+![img](./src/images/trello.png)
 
 ### 3. Protótipo :computer:
 A seguir, está o protótipo inicial do site. Um fluxograma da criação das funcionalidades do site e um fluxo dos processos para criação do projeto.
 
-![imagem](https://)
-![imagem](./src/images/home2.png)
-![imagem](./src/images/home3.png)
-![imagem](./src/images/home4.png)
+![img](https://)
+![img](./src/images/home2.png)
+![img](./src/images/home3.png)
+![img](./src/images/home4.png)
 
 ### 4. Tecnologias Utilizadas :computer:
 Para a realização deste projeto 
