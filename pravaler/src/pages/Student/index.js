@@ -196,6 +196,7 @@ function App() {
       }
       const response = await axios.post("https://pravaler-api.herokuapp.com/register", body);
       console.log(response)
+      history.push("/Sucesso");
     };
     
   return (
