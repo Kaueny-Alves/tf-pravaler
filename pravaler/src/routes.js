@@ -6,6 +6,8 @@ import Login from "./pages/Login/index";
 import School from "./pages/School/index";
 import Simulator from "./pages/Simulator/index";
 import Student from "./pages/Student/index";
+import Sucesso from "./pages/Student/email";
+
 
 function Routes() {
   return (
@@ -17,6 +19,7 @@ function Routes() {
         <Route path="/Simulator" component={Simulator} />
         <Route path="/Student" component={Student} />
         <Route path="/Email" component={Email} />
+        <Route path="/Sucesso" component={Sucesso} />
       </Switch>
     </BrowserRouter>
   );
