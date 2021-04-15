@@ -18,7 +18,7 @@ Desafio real proposto pela Pravaler. Implementamos o que aprendemos em termos t�
 ###  2. Planejamento :bulb:
 A equipe utilizou a ferramenta Trello para fazer todo o planejamento e organização do projeto. Abaixo a imagem do quadro que a equipe criou para tal fim. Se quiser saber um pouco mais sobre o planejamento do projeto, basta acessar nosso quadro através desse `<link>` [Trello](https://trello.com/b/Fb5RufFT/pravaler)
 
-![img](./src/images/trello.png)
+<p align="center">![img](./src/images/trello.png)</p>
 
 ### 3. Protótipo :computer:
 A seguir, está o protótipo inicial do site. Um fluxograma da criação das funcionalidades do site e um fluxo dos processos para criação do projeto.
