@@ -121,6 +121,7 @@ function App() {
   const [listMapFmu, setListMapFmu] = useState()
   const [listMapMac, setListMapMac] = useState()
   const [list, setList] = useState()
+  const [option,setOption] = useState("")
 
 
   function getCourses() {
@@ -137,8 +138,6 @@ function App() {
       setListMapMac(filteredmac.courses)
       console.log(listMapMac)
   }
-
-  const [option,setOption] = useState("")
 
   function caseSelect() {
     switch (courses) {
