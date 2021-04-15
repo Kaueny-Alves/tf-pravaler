@@ -50,6 +50,7 @@ function App() {
   const [state, setState] = useState("");
 
   const [courses, setCourses] = useState("")
+  const [coursesOpt, setCoursesOpt] = useState("")
 
   function validateLender() {
     if (
@@ -114,12 +115,11 @@ function App() {
     getSchool()
   }, [])
   
-  const anhembi = school.filter((item) => {item.name === "anhembi morumbi"})
 
   function renderCoursers(courses) {
     switch (courses) {
       case "anhembi morumbi":
-        return anhembi.map((item) => console.log(item.name))
+        return courses.filter((item) => item.name === "anhembi morumbi")
       case "cruzeiro do sul":
         return console.log("cruzeiro")
       case "fmu - faculdades metropolitanas unidas":
