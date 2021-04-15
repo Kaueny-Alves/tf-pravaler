@@ -60,8 +60,8 @@ export const reqServ = {
       headers: myHeaders,
       redirect: "follow",
     };
-    fetch(`https://brasilapi.com.br/api/cep/v1/${cep}`, requestOptions)
-      .then((response) => response.text())
+    fetch(`https://brasilapi.com.br/api/cep/v1/03590170`, requestOptions)
+      .then((response) => response.json())
       .then((result) => console.log(result))
       .catch((error) => console.log("Error", error));
   },
