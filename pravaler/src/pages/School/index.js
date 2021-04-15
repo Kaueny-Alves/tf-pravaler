@@ -23,7 +23,7 @@ function School() {
   function renderSchools(email) {
     switch (email) {
       case "fmu@pravaler.com":
-        return <Fmu />
+        return <Fmu/>
       case "mackenzie@pravaler.com":
         return <Mackenzi />
       case "cruzeiro@pravaler.com":
@@ -48,7 +48,6 @@ function School() {
           </button>
         </div>
       </header>
-
       {renderSchools(email)}
       <Footer />
     </>
