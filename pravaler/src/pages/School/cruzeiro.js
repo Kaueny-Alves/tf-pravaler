@@ -1,8 +1,9 @@
-
+import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 function Cruzeiro() {
+    const history = useHistory();
 
     const [users, setUsers] = useState([])
 
@@ -20,6 +21,7 @@ function Cruzeiro() {
             const body = { status: "approved" };
             const user = await axios.put(`https://pravaler-api.herokuapp.com/register/${id}`, body);
             console.log(user);
+            history.push("/Email");
         } catch (error) {
             console.log(error.message)
         }
