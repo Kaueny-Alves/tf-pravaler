@@ -1,13 +1,10 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-
 import Home from "./pages/Home/index";
 import Login from "./pages/Login/index";
 import School from "./pages/School/index";
 import Simulator from "./pages/Simulator/index";
 import Student from "./pages/Student/index";
-import Registry from "./pages/Registry/index";
-
 
 function Routes() {
   return (
@@ -17,8 +14,7 @@ function Routes() {
         <Route path="/Login" component={Login} />
         <Route path="/School" component={School} />
         <Route path="/Simulator" component={Simulator} />
-        <Route path="/Student" component={Student} />
-        <Route path="/Registry" component={Registry} />
+        <Route path="/Student" component={Student} />        
       </Switch>
     </BrowserRouter>
   );
