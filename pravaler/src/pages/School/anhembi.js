@@ -16,6 +16,16 @@ function Anhembi() {
         console.log(users)
     }, [])
 
+   
+    const routerLogout = () => {
+      localStorage.removeItem("token");
+      localStorage.removeItem("email");
+      history.push("/");
+    };
+    const routerHome = () => {
+      history.push("/");
+    };
+
     async function putApproved(id) {
         try {
             const body = { status: "approved" };
@@ -40,6 +50,19 @@ function Anhembi() {
 
     return (
         <>
+         <header>
+        <a href="https://www.pravaler.com.br/" className="brand">
+          <img src="pravaler.png" alt="Logo Pravaler" />
+        </a>
+        <div className="navigation">
+          <button type="button " className="btn-clean" onClick={routerLogout}>
+            Logout
+          </button>
+          <button type="button" className="btn" onClick={routerHome}>
+            Home
+          </button>
+        </div>
+      </header>
             <section className="container">
                 <h1>Anhembi Morumbi</h1>
                 <section className="container-student">

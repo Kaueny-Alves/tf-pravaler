@@ -15,16 +15,25 @@ function Fmu() {
         console.log(users)
     }, [])
 
+   
+    const routerLogout = () => {
+      localStorage.removeItem("token");
+      localStorage.removeItem("email");
+      history.push("/");
+    };
+    const routerHome = () => {
+      history.push("/");
+    };
+
     async function putApproved(id) {
         try {
             const body = { status: "approved" };
             const user = await axios.put(`https://pravaler-api.herokuapp.com/register/${id}`, body);
             console.log(user);
-            window.location = "/School"
+            history.push("/Email");
         } catch (error) {
             console.log(error.message)
         }
-
     }
 
     async function putDisapproved(id) {
@@ -32,7 +41,7 @@ function Fmu() {
             const body = { status: "disapproved" };
             const user = await axios.put(`https://pravaler-api.herokuapp.com/register/${id}`, body);
             console.log(user);
-            history.push("/School");
+            window.location = "/School"
         } catch (error) {
             console.log(error.message)
         }
@@ -40,6 +49,19 @@ function Fmu() {
 
     return (
         <>
+         <header>
+        <a href="https://www.pravaler.com.br/" className="brand">
+          <img src="pravaler.png" alt="Logo Pravaler" />
+        </a>
+        <div className="navigation">
+          <button type="button " className="btn-clean" onClick={routerLogout}>
+            Logout
+          </button>
+          <button type="button" className="btn" onClick={routerHome}>
+            Home
+          </button>
+        </div>
+      </header>
             <section className="container">
                 <h1> FMU</h1>
                 <section className="container-student">

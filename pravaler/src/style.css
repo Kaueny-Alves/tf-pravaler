@@ -163,14 +163,16 @@ section{
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: auto;
+  height: 100vh;
 }
 .container-student{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 20px;
-  margin: 20px;
   height: 100vh;
+  padding: 100px;
 }
 
 .card-student{
