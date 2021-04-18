@@ -32,6 +32,7 @@ function Mackenzi() {
             const body = { status: "disapproved" };
             const user = await axios.put(`https://pravaler-api.herokuapp.com/register/${id}`, body);
             console.log(user);
+            window.location = "/School"
         } catch (error) {
             console.log(error.message)
         }
