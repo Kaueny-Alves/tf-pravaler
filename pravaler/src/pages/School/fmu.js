@@ -20,7 +20,7 @@ function Fmu() {
             const body = { status: "approved" };
             const user = await axios.put(`https://pravaler-api.herokuapp.com/register/${id}`, body);
             console.log(user);
-            history.push("/Email");
+            window.location = "/School"
         } catch (error) {
             console.log(error.message)
         }
@@ -32,6 +32,7 @@ function Fmu() {
             const body = { status: "disapproved" };
             const user = await axios.put(`https://pravaler-api.herokuapp.com/register/${id}`, body);
             console.log(user);
+            history.push("/School");
         } catch (error) {
             console.log(error.message)
         }
