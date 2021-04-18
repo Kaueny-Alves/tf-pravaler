@@ -3,7 +3,7 @@
 
 ## Índice :rocket:
 
-- [0. Link](#0-link-do-projeto)
+- [01. Link](#0-link-do-projeto)
 
 - [1. Descrição](#1-descrição)
 
@@ -15,14 +15,16 @@
 
 - [5. Desenvolvedoras](#7-desenvolvedoras)
 
-### 0. Link do Projeto
+### 01. Link do Projeto
 
 * PRAVALER - [link](https://pravaler.vercel.app/)
+* Para acessar o portal pode usar:
+* email: anhembi@pravaler.com e password: 123456
 
 ### 1. Descrição :pencil:
 Desafio real proposto pela Pravaler. Implementamos o que aprendemos em termos técnicos e socioemocionais ao longo do Bootcamp.
 
-###  2. Planejamento :bulb:
+### 2. Planejamento :bulb:
 A equipe utilizou a ferramenta Trello para fazer todo o planejamento e organização do projeto. Abaixo a imagem do quadro que a equipe criou para tal fim. Se quiser saber um pouco mais sobre o planejamento do projeto, basta acessar nosso quadro através desse `<link>` [Trello](https://trello.com/b/Fb5RufFT/pravaler)
 
 <p align="center"><img src = "./pravaler/src/images/trello.png" height='550' widht='550'></p>
